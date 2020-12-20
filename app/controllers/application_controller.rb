@@ -9,8 +9,4 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "therapy_session"
   end
 
-  get "/" do
-    erb :welcome
-  end
-
 end
