@@ -1,21 +1,14 @@
 class UsersController < ApplicationController
 
-    #index
-    get '/users' do
+    #signup
+    get '/signup' do
         @users = User.all
-        erb :'users/index'
+        erb :'users/new'
     end
 
-    #show
+    #load form
 
-    #new
-
-    #create
-
-    #edit
-
-    #update
-
-    #destroy
+    #process form + create user
+    ##creating the user AND logging them in
 
 end
