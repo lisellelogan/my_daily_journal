@@ -13,9 +13,16 @@ class UsersController < ApplicationController
     end
 
     #process signup
-    # post '/signup' do
-        
-    # end
+    post '/signup' do
+        @user = User.new(name: params[:name], email: params[:email], password: params[:password])
+
+        "Completed"
+        # if user.save
+        #     redirect '/login'
+        # else  
+        #     rediect '/failure'
+        # end
+    end
 
     #load form
 
