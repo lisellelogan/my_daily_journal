@@ -1,5 +1,11 @@
 class UsersController < ApplicationController
 
+    #index action
+    ##ask user if want to login or signup
+    get '/' do 
+        erb :'users/index'
+    end
+
     #signup
     get '/signup' do
         @users = User.all
