@@ -6,11 +6,16 @@ class UsersController < ApplicationController
         erb :'users/index'
     end
 
-    #signup
-    get '/signup' do
+    #new - signup
+    get '/signup' do 
         @users = User.all
-        erb :'users/new'
+        erb :'users/signup'
     end
+
+    #process signup
+    # post '/signup' do
+        
+    # end
 
     #load form
 
