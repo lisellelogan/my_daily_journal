@@ -16,15 +16,18 @@ class UsersController < ApplicationController
     post '/signup' do
         @user = User.new(name: params[:name], email: params[:email], password: params[:password])
 
-        "Completed"
-        # if user.save
-        #     redirect '/login'
-        # else  
-        #     rediect '/failure'
-        # end
+        if user.save
+            redirect '/login'
+        else  
+            rediect '/failure'
+        end
     end
 
-    #load form
+   #login
+   get '/login' do 
+        erb :'users/login'
+   end
+
 
     #process form + create user
     ##creating the user AND logging them in
