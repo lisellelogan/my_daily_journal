@@ -39,6 +39,14 @@ class UsersController < ApplicationController
         end
    end
 
+   get '/success' do 
+        if logged_in?
+            erb :'users/success'
+        else  
+            redirect '/login'
+        end
+   end
+
 
     #process form + create user
     ##creating the user AND logging them in
