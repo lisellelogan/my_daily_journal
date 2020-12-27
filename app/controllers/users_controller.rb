@@ -47,6 +47,18 @@ class UsersController < ApplicationController
         end
    end
 
+   get '/failure' do
+        erb :'users/failure'
+   end
+   
+   #logout
+   get '/logout' do 
+        session.clear
+        redirect '/'
+   end
+
+   #delete journal entries
+
    #helper methods
     helpers do 
         def logged_in? 
