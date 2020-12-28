@@ -14,10 +14,10 @@ class UsersController < ApplicationController
 
     #process signup (creates user)
     post '/signup' do
-        @user = User.new(name: params[:name], email: params[:email], password: params[:password])
-        if @user.save
-            session[:user_id] = @user.id #logs user in and keeps track of who is logged in
-            redirect '/success'
+        user = User.new(name: params[:name], email: params[:email], password: params[:password])
+        if user.save
+            session[:user_id] = user.id #logs user in and keeps track of who is logged in
+            redirect "/users/#{user.id}"
         else  
             redirect '/failure'
         end
@@ -33,15 +33,15 @@ class UsersController < ApplicationController
         @user = User.find_by(email: params[:email])
         if @user && @user.authenticate(params[:password]) #verifying the user is in the database
             session[:user_id] = @user.id
-            redirect '/success'
+            redirect "/users/#{@user.id}"
         else   
             redirect '/failure'
         end
    end
 
-   get '/success' do 
+   get '/users/:id' do 
         if logged_in?
-            erb :'users/success'
+            erb :'users/show'
         else  
             redirect '/login'
         end
