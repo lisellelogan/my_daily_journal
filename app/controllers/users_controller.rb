@@ -3,7 +3,11 @@ class UsersController < ApplicationController
     #index action
     ##ask user if want to login or signup
     get '/' do 
-        erb :'users/index'
+        if logged_in?
+            redirect "/users/#{@current_user.id}"
+        else  
+            erb :'users/index'
+        end
     end
 
     #new - signup
@@ -40,11 +44,7 @@ class UsersController < ApplicationController
    end
 
    get '/users/:id' do 
-        if logged_in?
-            erb :'users/show'
-        else  
-            redirect '/login'
-        end
+        erb :'users/show'
    end
 
    get '/users/:id/edit' do 
