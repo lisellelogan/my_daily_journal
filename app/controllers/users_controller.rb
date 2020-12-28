@@ -12,12 +12,12 @@ class UsersController < ApplicationController
         erb :'users/signup'
     end
 
-    #process signup
+    #process signup (creates user)
     post '/signup' do
         @user = User.new(name: params[:name], email: params[:email], password: params[:password])
-
         if @user.save
-            redirect '/login'
+            session[:user_id] = @user.id #logs user in and keeps track of who is logged in
+            redirect '/success'
         else  
             redirect '/failure'
         end
@@ -28,13 +28,13 @@ class UsersController < ApplicationController
         erb :'users/login'
    end
 
-   #process login
+   #process login (creates session)
    post '/login' do 
         @user = User.find_by(email: params[:email])
-        if @user && @user.authenticate(params[:password])
+        if @user && @user.authenticate(params[:password]) #verifying the user is in the database
             session[:user_id] = @user.id
             redirect '/success'
-        else  
+        else   
             redirect '/failure'
         end
    end
@@ -69,8 +69,5 @@ class UsersController < ApplicationController
             User.find(session[:user_id])
         end
     end
-
-    #process form + create user
-    ##creating the user AND logging them in
 
 end
