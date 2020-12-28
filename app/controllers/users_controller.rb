@@ -49,9 +49,11 @@ class UsersController < ApplicationController
 
    get '/users/:id/edit' do 
         #find the user
-        # @user = User.find_by(id: params[:id])
+        @user = User.find_by(id: params[:id])
         #get the post
+        @journal_entries = JournalEntry.all
         #render the edit page
+        erb :'users/edit'
    end
 
    get '/failure' do
