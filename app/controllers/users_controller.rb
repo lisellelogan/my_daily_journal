@@ -49,6 +49,7 @@ class UsersController < ApplicationController
 
    get '/users/:id/edit' do 
         #find the user
+        # @user = User.find_by(id: params[:id])
         #get the post
         #render the edit page
    end
