@@ -47,6 +47,12 @@ class UsersController < ApplicationController
         end
    end
 
+   get '/users/:id/edit' do 
+        #find the user
+        #get the post
+        #render the edit page
+   end
+
    get '/failure' do
         erb :'users/failure'
    end
