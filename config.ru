@@ -7,3 +7,4 @@ end
 use Rack::MethodOverride #in order to send patch and delete requests
 run ApplicationController
 use UsersController
+use JournalEntriesController
