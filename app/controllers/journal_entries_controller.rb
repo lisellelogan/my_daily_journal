@@ -29,7 +29,15 @@ class JournalEntriesController < ApplicationController
     # edit journal entries
     get '/journal_entries/:id/edit' do 
         @journal_entry = JournalEntry.find_by(id: params[:id])
-        erb :'/journal_entries/edit'
+        if logged_in?
+            if @journal_entry.user == current_user
+                erb :'/journal_entries/edit'
+            else  
+                redirect "/users/#{current_user.id}"
+            end
+        else  
+            redirect '/'
+        end
     end
 
     #patch 
