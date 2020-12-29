@@ -2,8 +2,12 @@ class JournalEntriesController < ApplicationController
 
      # index route for all journal entries
     get '/journal_entries' do 
-        @journal_entries = JournalEntry.all
-        erb :'/journal_entries/index'
+        if logged_in? 
+            @journal_entries = JournalEntry.all
+            erb :'/journal_entries/index'
+        else  
+            redirect '/'
+        end
     end
 
 
