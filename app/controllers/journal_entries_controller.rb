@@ -1,4 +1,12 @@
 class JournalEntriesController < ApplicationController
+
+     # index route for all journal entries
+    get '/journal_entries' do 
+        @journal_entries = JournalEntry.all
+        erb :'/journal_entries/index'
+    end
+
+
     # get journal_entries/new to render form to create new journal entries
     get '/journal_entries/new' do 
         erb :'journal_entries/new'
@@ -43,9 +51,16 @@ class JournalEntriesController < ApplicationController
     #patch 
     patch '/journal_entries/:id' do 
         @journal_entry = JournalEntry.find_by(id: params[:id])
-        @journal_entry.update(date: params[:date], content: params[:content])
-        redirect "/journal_entries/#{@journal_entry.id}"
+        if logged_in?
+            if @journal_entry.user == current_user
+                @journal_entry.update(date: params[:date], content: params[:content])
+                redirect "/journal_entries/#{@journal_entry.id}"
+            else  
+                redirect "/users/#{current_user.id}"
+            end
+        else  
+            redirect '/'
+        end
     end
 
-    # index route for all journal entries
 end
