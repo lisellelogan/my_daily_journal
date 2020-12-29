@@ -6,7 +6,7 @@ class JournalEntriesController < ApplicationController
 
     # post journal_entries to create new journal entry
     post '/journal_entries' do 
-        #create new journal entry and save it to db
+        
         #only want to save entry if it has content
         if !logged_in?
             redirect '/'  
@@ -21,6 +21,10 @@ class JournalEntriesController < ApplicationController
     end
 
     # show route for a journal entry
+    get '/journal_entries/:id' do 
+        @journal_entry = JournalEntry.find_by(id: params[:id])
+        erb :'/journal_entries/show'
+    end
 
     # index route for all journal entries
 end
