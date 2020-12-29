@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     ##ask user if want to login or signup
     get '/' do 
         if logged_in?
-            redirect "/users/#{@current_user.id}"
+            redirect "/users/#{current_user.id}"
         else  
             erb :'users/index'
         end
