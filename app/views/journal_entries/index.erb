@@ -1,0 +1,5 @@
+<h1>All Journal Entries</h1>
+
+<% @journal_entries.each do |journal_entry| %>
+    <h5><a href="/journal_entries/<%= journal_entry.id %>"><%= journal_entry.date %></a></h5>
+<% end %>
