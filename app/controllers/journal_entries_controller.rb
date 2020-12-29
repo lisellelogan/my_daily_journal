@@ -26,5 +26,11 @@ class JournalEntriesController < ApplicationController
         erb :'/journal_entries/show'
     end
 
+    # edit journal entries
+    get '/journal_entries/:id/edit' do 
+        @journal_entry = JournalEntry.find_by(id: params[:id])
+        erb :'/journal_entries/edit'
+    end
+
     # index route for all journal entries
 end
