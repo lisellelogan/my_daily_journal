@@ -3,6 +3,7 @@ class JournalEntriesController < ApplicationController
     get '/journal_entries/new' do 
         erb :'journal_entries/new'
     end
+
     # post journal_entries to create new journal entry
     post '/journal_entries' do 
         #create new journal entry and save it to db
@@ -12,7 +13,8 @@ class JournalEntriesController < ApplicationController
         end
         #only want to create entry if user is logged in
         if params[:content] != ""
-            @journal_entry = JournalEntry.crate(params)
+            @journal_entry = JournalEntry.crate(content: params[:content], user_id: current_user.id)
+            redirect "/journal_entries/#{@journal_entry.id}"
         else
             redirect '/journal_entries/new'
         end
