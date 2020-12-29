@@ -32,5 +32,12 @@ class JournalEntriesController < ApplicationController
         erb :'/journal_entries/edit'
     end
 
+    #patch 
+    patch '/journal_entries/:id' do 
+        @journal_entry = JournalEntry.find_by(id: params[:id])
+        @journal_entry.update(date: params[:date], content: params[:content])
+        redirect "/journal_entries/#{@journal_entry.id}"
+    end
+
     # index route for all journal entries
 end
