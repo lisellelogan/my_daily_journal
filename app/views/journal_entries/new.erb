@@ -1,9 +1,10 @@
 <h1>New Journal Entry<h1>
 <form method="POST" action="/journal_entries">
-    <h3>Today's Date:</h3>
+    <label for="date">Today's Date: </label>
     <input type="text" name="date" placeholder="date">
     <br>
-    <textarea id="content" name="content" placeholder="How was your day?"></textarea>
+    <label for="content">Content: </label>
+    <input id="content" name="content" placeholder="How was your day?">
     <br>
     <input type="submit" value="Done">
 </form>

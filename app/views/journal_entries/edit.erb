@@ -1,1 +1,10 @@
-This is your edit page
+<h1>Edit Journal Entry: <%= @journal_entry.date %><h1>
+<form method="POST" action="/journal_entries">
+    <h3><label for="date">Today's Date: </label></h3>
+    <input type="text" name="date" value="<%= @journal_entry.date %>">
+    <br>
+    <h3><label for="content">Content: </label></h3>
+    <input id="content" name="content" value="<%= @journal_entry.content %>">
+    <br>
+    <input type="submit" value="Done">
+</form>
