@@ -1,10 +1,11 @@
 <h1>Edit Journal Entry: <%= @journal_entry.date %><h1>
-<form method="POST" action="/journal_entries">
+<form method="POST" action="/journal_entries/<%= @journal_entry.id %>">
+    <input type="hidden" name="_method" value="patch">
     <h3><label for="date">Today's Date: </label></h3>
     <input type="text" name="date" value="<%= @journal_entry.date %>">
     <br>
     <h3><label for="content">Content: </label></h3>
-    <input id="content" name="content" value="<%= @journal_entry.content %>">
+    <textarea id="content" name="content"><%= @journal_entry.content %></textarea>
     <br>
     <input type="submit" value="Done">
 </form>
