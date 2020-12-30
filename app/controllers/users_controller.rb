@@ -25,7 +25,7 @@ class UsersController < ApplicationController
         else  
             # display full error messages if not correct
             errors = user.errors.full_messages
-            redirect '/failure'
+            redirect '/signup'
         end
     end
 
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect "/users/#{@user.id}"
         else   
-            redirect '/failure'
+            redirect '/login'
         end
    end
 
@@ -57,10 +57,6 @@ class UsersController < ApplicationController
         @journal_entries = JournalEntry.all
         #render the edit page
         erb :'users/edit'
-   end
-
-   get '/failure' do
-        erb :'users/failure'
    end
    
    #logout
