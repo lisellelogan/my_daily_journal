@@ -67,4 +67,9 @@ class JournalEntriesController < ApplicationController
         end
     end
 
+    #delete journal entry
+    delete '/journal_entries/:id' do 
+        
+    end
+
 end
