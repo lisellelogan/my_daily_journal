@@ -69,7 +69,13 @@ class JournalEntriesController < ApplicationController
 
     #delete journal entry
     delete '/journal_entries/:id' do 
-        
+        @journal_entry = JournalEntry.find_by(id: params[:id])
+        if @journal_entry.user == current_user
+            @journal_entry.destroy
+            redirect '/journal_entries'
+        else
+            redirect '/journal_entries'
+        end
     end
 
 end
