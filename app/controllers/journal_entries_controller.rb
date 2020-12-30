@@ -25,7 +25,7 @@ class JournalEntriesController < ApplicationController
         end
         #only want to create entry if user is logged in
         if params[:content] != ""
-            @journal_entry = JournalEntry.create(content: params[:content], user_id: current_user.id)
+            @journal_entry = JournalEntry.create(date: params[:date], content: params[:content], user_id: current_user.id)
             redirect "/journal_entries/#{@journal_entry.id}"
         else
             redirect '/journal_entries/new'
