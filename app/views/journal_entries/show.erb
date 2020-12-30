@@ -4,7 +4,7 @@ JOURNAL ENTRY SHOW PAGE
 
 <% if current_user == @journal_entry.user %>
     <a href="/journal_entries/<%= @journal_entry.id %>/edit">Edit Entry</a>
-    <a href="">Delete Entry</a>
+    <br><br>
     <form method="POST" action="/journal_entries/<%= @journal_entry.id %>"> 
         <input type="hidden" name="_method" value="DELETE">
         <input type="submit" value="Delete This Entry">
