@@ -11,7 +11,6 @@ class JournalEntriesController < ApplicationController
         end
     end
 
-
     # get journal_entries/new to render form to create new journal entries
     get '/journal_entries/new' do 
         erb :'journal_entries/new'
