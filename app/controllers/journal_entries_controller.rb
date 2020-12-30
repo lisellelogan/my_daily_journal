@@ -3,7 +3,8 @@ class JournalEntriesController < ApplicationController
      # index route for all journal entries
     get '/journal_entries' do 
         if logged_in? 
-            @journal_entries = JournalEntry.all
+            all_journal_entries = JournalEntry.all
+            @user_journal_entries = all_journal_entries.select{|journal_entry| journal_entry.user == current_user} # to only show entries from logged in user
             erb :'/journal_entries/index'
         else  
             redirect '/'
