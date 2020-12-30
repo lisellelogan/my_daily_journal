@@ -23,6 +23,8 @@ class UsersController < ApplicationController
             session[:user_id] = user.id #logs user in and keeps track of who is logged in
             redirect "/users/#{user.id}"
         else  
+            # display full error messages if not correct
+            errors = user.errors.full_messages
             redirect '/failure'
         end
     end
