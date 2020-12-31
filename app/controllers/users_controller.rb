@@ -41,7 +41,6 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect "/users/#{@user.id}"
         else   
-            @errors = user.errors.full_messages.join(" - ")
             redirect '/login'
         end
    end
