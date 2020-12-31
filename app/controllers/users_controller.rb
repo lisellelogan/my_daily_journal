@@ -24,7 +24,7 @@ class UsersController < ApplicationController
             redirect "/users/#{user.id}"
         else  
             # display full error messages if not correct
-            @errors = user.errors.full_messages
+            @errors = user.errors.full_messages.join(" - ")
             erb :'users/signup'
         end
     end
@@ -41,6 +41,7 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect "/users/#{@user.id}"
         else   
+            @errors = user.errors.full_messages.join(" - ")
             redirect '/login'
         end
    end
