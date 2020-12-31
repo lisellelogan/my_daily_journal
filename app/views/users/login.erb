@@ -2,9 +2,9 @@
 <h3>Log in below to start writing</h3>
 <%= @errors %>
 <form method="POST" action="/login">
-    <input type="text" name="email" placeholder="Email">
+    <input type="text" name="email" placeholder="Email" required>
     <br>
-    <input type="password" name="password" placeholder="Password">
+    <input type="password" name="password" placeholder="Password" required>
     <br><br>
     <input type="submit" value="log In">
 </form>
