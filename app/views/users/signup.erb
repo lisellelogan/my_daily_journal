@@ -1,4 +1,7 @@
 <h1>Sign Up</h1>
+<% @errors.each do |error| %>
+    <h5><%= error %></h5>
+<% end %>
 <br>
 <form method="POST" action="/signup">
     <input type="text" name="name" placeholder="Full Name">

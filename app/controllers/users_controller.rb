@@ -24,8 +24,8 @@ class UsersController < ApplicationController
             redirect "/users/#{user.id}"
         else  
             # display full error messages if not correct
-            errors = user.errors.full_messages
-            redirect '/signup'
+            @errors = user.errors.full_messages
+            erb :'users/signup'
         end
     end
 
