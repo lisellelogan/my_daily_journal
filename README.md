@@ -9,3 +9,6 @@ My Daily Journal was created using the web framework Sinatra, implemented using 
 ## Installation
 
 To install this web application, make sure to clone `git@github.com:lisellelogan/my_daily_journal.git` and run `bundle install` to utilize the gems necessary for this web application.
+
+## Contributer's Guide
+
