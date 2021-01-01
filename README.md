@@ -18,6 +18,15 @@ To install this web application go to your terminal:
 
 To use the web application run `shotgun` to start your local server.
 
+You should see something like this if shotgun was successful:
+```bash
+== Shotgun/Thin on http://127.0.0.1:9393/
+2021-01-01 11:09:11 -0500 Thin web server (v1.8.0 codename Possessed Pickle)
+2021-01-01 11:09:11 -0500 Maximum connections set to 1024
+2021-01-01 11:09:11 -0500 Listening on 127.0.0.1:9393, CTRL+C to stop
+```
+You will be able to access your web application through the link provided by shotgun `http://127.0.0.1:9393/` .
+
 For more information on using the web application see this short [video] demo.
 
 ## Contributor's Guide
