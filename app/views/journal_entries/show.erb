@@ -1,6 +1,6 @@
-JOURNAL ENTRY SHOW PAGE
+<h1><%= @journal_entry.date %></h1>
 
-<p><%= @journal_entry.content %></p>
+<p><i><%= @journal_entry.content %></i></p>
 
 <% if current_user == @journal_entry.user %>
     <a href="/journal_entries/<%= @journal_entry.id %>/edit">Edit Entry</a>
@@ -10,3 +10,4 @@ JOURNAL ENTRY SHOW PAGE
         <input type="submit" value="Delete This Entry">
     </form>
 <% end %> 
+ 
