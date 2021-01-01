@@ -28,6 +28,7 @@ class JournalEntriesController < ApplicationController
             @journal_entry = JournalEntry.create(date: params[:date], content: params[:content], user_id: current_user.id)
             redirect "/journal_entries/#{@journal_entry.id}"
         else
+            flash[:message] = "Unable to create journal entry, no input detected. Please try again."
             redirect '/journal_entries/new'
         end
     end
