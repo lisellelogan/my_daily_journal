@@ -12,3 +12,10 @@ To install this web application, make sure to clone `git@github.com:lisellelogan
 
 ## Contributor's Guide
 
+Pull requests are welcome. For any major changes, please open an issue first to discuss changes you would like to make.
+
+Please make sure to update tests appropriately.
+
+## License
+
+[MIT](https://opensource.org/licenses/MIT)
