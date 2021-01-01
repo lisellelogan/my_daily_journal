@@ -43,7 +43,7 @@ class UsersController < ApplicationController
         else   
             flash[:message] = "Your credentials were invalid. Please sign up or try again."
             redirect '/login'
-        endq
+        end
    end
 
    get '/users/:id' do 
