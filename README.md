@@ -16,7 +16,9 @@ To install this web application go to your terminal:
 
 ## Usage 
 
+To use the web application run `shotgun` to start your local server.
 
+For more information on using the web application see this short [video] demo.
 
 ## Contributor's Guide
 
