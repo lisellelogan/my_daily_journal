@@ -6,6 +6,11 @@ My Daily Journal was created to have the ability to journal anywhere you go! Thi
 
 My Daily Journal was created using the web framework Sinatra, implemented using Ruby, HTML, and CSS.
 
+## Visuals
+
+The [icon](https://www.deviantart.com/guichicookie/art/Journal-icon-341340032) for the web application.
+
+
 ## Installation
 
 To install this web application go to your terminal:
