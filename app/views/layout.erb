@@ -16,7 +16,7 @@
   <body>
     <div class="nav">
       <% if logged_in? %>
-        <a href="/users/:id">Home</a>
+        <a href="/users/<%= current_user.id %>">Home</a>
         <a href="/journal_entries">All Journal Entries</a>
         <a href="/journal_entries/new">Create Journal Entry</a>
         <a href="/logout">Logout</a>
@@ -27,7 +27,7 @@
       <% if flash[:message] %>
         <h3 style="color: red;"><%= flash[:message] %></h3>
       <% end %>
-      
+
         <%= yield %>
 
       <footer class="branding">
