@@ -41,8 +41,9 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect "/users/#{@user.id}"
         else   
+            flash[:message] = "Your credentials were invalid. Please sign up or try again."
             redirect '/login'
-        end
+        endq
    end
 
    get '/users/:id' do 
