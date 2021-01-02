@@ -1,29 +1,25 @@
 class JournalEntriesController < ApplicationController
 
-     # index route for all journal entries
     get '/journal_entries' do 
         if logged_in? 
             all_journal_entries = JournalEntry.all
-            @user_journal_entries = all_journal_entries.select{|journal_entry| journal_entry.user == current_user} # to only show entries from logged in user
+            @user_journal_entries = all_journal_entries.select{|journal_entry| journal_entry.user == current_user} 
             erb :'/journal_entries/index'
         else  
             redirect '/'
         end
     end
 
-    # get journal_entries/new to render form to create new journal entries
     get '/journal_entries/new' do 
         erb :'journal_entries/new'
     end
 
-    # post journal_entries to create new journal entry
     post '/journal_entries' do 
         
-        #only want to save entry if it has content
         if !logged_in?
             redirect '/'  
         end
-        #only want to create entry if user is logged in
+    
         if params[:content] != ""
             @journal_entry = JournalEntry.create(date: params[:date], content: params[:content], user_id: current_user.id)
             redirect "/journal_entries/#{@journal_entry.id}"
@@ -33,13 +29,11 @@ class JournalEntriesController < ApplicationController
         end
     end
 
-    # show route for a journal entry
     get '/journal_entries/:id' do 
         @journal_entry = JournalEntry.find_by(id: params[:id])
         erb :'/journal_entries/show'
     end
 
-    # edit journal entries
     get '/journal_entries/:id/edit' do 
         @journal_entry = JournalEntry.find_by(id: params[:id])
         if logged_in?
@@ -53,7 +47,6 @@ class JournalEntriesController < ApplicationController
         end
     end
 
-    #patch 
     patch '/journal_entries/:id' do 
         @journal_entry = JournalEntry.find_by(id: params[:id])
         if logged_in?
@@ -68,7 +61,6 @@ class JournalEntriesController < ApplicationController
         end
     end
 
-    #delete journal entry
     delete '/journal_entries/:id' do 
         @journal_entry = JournalEntry.find_by(id: params[:id])
         if @journal_entry.user == current_user
