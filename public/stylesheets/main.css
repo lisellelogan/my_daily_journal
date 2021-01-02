@@ -92,13 +92,8 @@
     box-shadow: 0 4px 7px rgba(0, 0, 0, 0.3);
   }
 
-  a {
-    transition: all .4s;
-  }
-
-  a:link, a:visited, a:hover, a:active {
-    text-decoration: none;
-    color: black;
+  .login {
+    color: lightblue;
   }
 
   .wrapper {
