@@ -31,7 +31,7 @@ You should see something like this if shotgun was successful:
 ```
 You will be able to access your web application through the link provided by shotgun `http://127.0.0.1:9393/` .
 
-For more information on using the web application see this short [video] demo.
+For more information on using the web application see this short [video](https://www.youtube.com/watch?v=jkallBL5sjc&feature=youtu.be) demo.
 
 ## Contributor's Guide
 
