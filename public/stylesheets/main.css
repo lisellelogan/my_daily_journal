@@ -93,7 +93,11 @@
   }
 
   .login {
-    color: lightblue;
+    color: rgba(111, 150, 163, 0.979);
+  }
+
+  .signup {
+    color: rgba(111, 150, 163, 0.979);
   }
 
   .wrapper {
