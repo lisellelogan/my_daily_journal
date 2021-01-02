@@ -3,11 +3,11 @@
 <p><i><%= @journal_entry.content %></i></p>
 
 <% if current_user == @journal_entry.user %>
-    <a href="/journal_entries/<%= @journal_entry.id %>/edit">Edit Entry</a>
+    <a class="edit_journal_entry_link" href="/journal_entries/<%= @journal_entry.id %>/edit">Edit Entry</a>
     <br><br>
     <form method="POST" action="/journal_entries/<%= @journal_entry.id %>"> 
         <input type="hidden" name="_method" value="DELETE">
-        <input type="submit" value="Delete This Entry">
+        <input class="delete_journal_entry_submit" type="submit" value="Delete This Entry">
     </form>
 <% end %> 
  

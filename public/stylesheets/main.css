@@ -158,6 +158,19 @@
     color: rgba(111, 150, 163, 0.979);
   }
 
+  .edit_journal_entry_link {
+    color: rgba(111, 150, 163, 0.979);
+  }
+
+  .delete_journal_entry_submit {
+    width: min-content;
+    padding: 4px 8px;
+  }
+
+  .delete_journal_entry_submit:hover {
+    cursor: pointer;
+  }
+
   .wrapper {
     background: #fff;
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
