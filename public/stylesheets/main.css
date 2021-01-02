@@ -35,6 +35,9 @@
   .home {
     padding: 10px 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,.3);
+    text-decoration: none;
+    color: #333;
+    transition: all .3s;
   }
 
   .home:hover {
@@ -50,6 +53,9 @@
   .logout {
     padding: 10px 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,.3);
+    color: #333;
+    text-decoration: none;
+    transition: all .3s;
   }
 
   .logout:hover {
@@ -64,7 +70,10 @@
 
   .create {
     padding: 10px 12px;
+    text-decoration: none;
     box-shadow: 0 4px 10px rgba(0,0,0,.3);
+    color: #333;
+    transition: all .3s;
   }
   
   .create:hover {
@@ -79,7 +88,10 @@
   
   .all {
     padding: 10px 12px;
+    text-decoration: none;
     box-shadow: 0 4px 10px rgba(0,0,0,.3);
+    color: #333;
+    transition: all .3s;
   }
 
   .all:hover {
