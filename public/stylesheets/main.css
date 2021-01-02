@@ -112,6 +112,24 @@
     color: rgba(111, 150, 163, 0.979);
   }
 
+  .journal_form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .journal_date {
+    font-size: 20px;
+    line-height: 3px;
+  }
+
+  .journal_date_input {
+    max-width: 160px;
+  }
+
+  .journal_content {
+    font-size: 20px;
+  }
+
   .wrapper {
     background: #fff;
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
