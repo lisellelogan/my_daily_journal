@@ -118,16 +118,28 @@
   }
 
   .journal_date {
+    margin-top: 20px;
     font-size: 20px;
     line-height: 3px;
   }
 
   .journal_date_input {
     max-width: 160px;
+    margin-top: -30px;
   }
 
   .journal_content {
     font-size: 20px;
+    margin-top: -45px;
+  }
+
+  .journal_submit {
+    width: min-content;
+    padding: 4px 8px;
+  }
+
+  .journal_submit:hover {
+    cursor: pointer;
   }
 
   .wrapper {
