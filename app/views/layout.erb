@@ -16,10 +16,10 @@
   <body>
     <div class="nav">
       <% if logged_in? %>
-        <a href="/users/<%= current_user.id %>">Home</a>
-        <a href="/journal_entries">All Journal Entries</a>
-        <a href="/journal_entries/new">Create Journal Entry</a>
-        <a href="/logout">Logout</a>
+        <a class="home" href="/users/<%= current_user.id %>">Home</a>
+        <a class="all" href="/journal_entries">All Journal Entries</a>
+        <a class="create" href="/journal_entries/new">Create Journal Entry</a>
+        <a class="logout" href="/logout">Logout</a>
       <% end %>
     </div>
 

@@ -23,7 +23,82 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-top: 10px;
+    margin: 10px 0 0 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    width: 85%;
+    padding: 16px 2.25%;
+    max-width: 960px;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+  }
+
+  .home {
+    padding: 10px 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.3);
+  }
+
+  .home:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 13px rgba(0, 0, 0, 0.250);
+  }
+
+  .home:active {
+    transform: translateY(3px);
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.3);
+  }
+
+  .logout {
+    padding: 10px 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.3);
+  }
+
+  .logout:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 13px rgba(0, 0, 0, 0.250);
+  }
+
+  .logout:active {
+    transform: translateY(3px);
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.3);
+  }
+
+  .create {
+    padding: 10px 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.3);
+  }
+  
+  .create:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 13px rgba(0, 0, 0, 0.250);
+  }
+
+  .create:active {
+    transform: translateY(3px);
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.3);
+  } 
+  
+  .all {
+    padding: 10px 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.3);
+  }
+
+  .all:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 13px rgba(0, 0, 0, 0.250);
+  }
+
+  .all:active {
+    transform: translateY(3px);
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.3);
+  }
+
+  a {
+    transition: all .4s;
+  }
+
+  a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: black;
   }
 
   .wrapper {
