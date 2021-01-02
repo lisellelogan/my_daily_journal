@@ -154,6 +154,10 @@
     color: lightslategray;
   }
 
+  .journal_entry_link {
+    color: rgba(111, 150, 163, 0.979);
+  }
+
   .wrapper {
     background: #fff;
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
@@ -185,6 +189,7 @@
 
   p {
     margin-bottom: 18px;
+    color:slategray;
   }
 
   .main {
