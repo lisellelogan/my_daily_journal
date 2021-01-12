@@ -36,29 +36,17 @@ class JournalEntriesController < ApplicationController
 
     get '/journal_entries/:id/edit' do 
         @journal_entry = JournalEntry.find_by(id: params[:id])
-        if logged_in?
-            if @journal_entry.user == current_user
-                erb :'/journal_entries/edit'
-            else  
-                redirect "/users/#{current_user.id}"
-            end
-        else  
-            redirect '/'
-        end
+        redirect_if_not_logged_in
+        not_authorized_to_edit
+        erb :'/journal_entries/edit'
     end
 
     patch '/journal_entries/:id' do 
         @journal_entry = JournalEntry.find_by(id: params[:id])
-        if logged_in?
-            if @journal_entry.user == current_user
-                @journal_entry.update(date: params[:date], content: params[:content])
-                redirect "/journal_entries/#{@journal_entry.id}"
-            else  
-                redirect "/users/#{current_user.id}"
-            end
-        else  
-            redirect '/'
-        end
+        redirect_if_not_logged_in
+        not_authorized_to_edit
+        @journal_entry.update(date: params[:date], content: params[:content])
+        redirect "/journal_entries/#{@journal_entry.id}"
     end
 
     delete '/journal_entries/:id' do 
