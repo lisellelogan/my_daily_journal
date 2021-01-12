@@ -9,7 +9,6 @@ class UsersController < ApplicationController
     end
 
     get '/signup' do 
-        @users = User.all
         erb :'users/signup'
     end
 
